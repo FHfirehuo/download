@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ciecc.download.fire</groupId>
+	<artifactId>download</artifactId>
+	<version>0.0.1</version>
+
+	<!-- 通过该设置，您还可以通过在自己的项目中重写属性来覆盖各个依赖项。 例如，要升级到另一个Spring Data发行版，您需要将以下内容添加到您的设置中，还可以通过覆盖您自己项目中的属性来覆盖各个依赖项。 
+		例如，要升级到另一个Spring Data发行版，您需要将以下内容添加到您的 -->
+	<properties>
+		<!-- <spring-data-releasetrain.version>Fowler-SR2</spring-data-releasetrain.version> -->
+		<java.version>1.8</java.version>
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<!-- Spring Boot包含一组额外的工具，可以使应用程序开发体验更愉快。 spring-boot-devtools模块可以包含在任何项目中以提供额外的开发时间功能。 
+				要包含devtools支持，只需将模块依赖关系添加到您的版本： -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- Spring Boot开发人员工具不仅限于本地开发。 您还可以在远程运行应用程序时使用多个功能。 远程支持是可选的，为了启用它，您需要确保devtools包含在重新打包的归档中： -->
+				<configuration>
+					<excludeDevtools>false</excludeDevtools>
+				</configuration>
+				<!-- <configuration>
+					<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments> 
+				</configuration> -->
+				<!-- mvn spring-boot:repackage -->
+				<!-- <executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions> -->
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
