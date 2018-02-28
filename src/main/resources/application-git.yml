@@ -1,0 +1,33 @@
+#需要把文件名的-git去掉并去掉此注释
+app:
+    name:download
+    description:${app.name} is a Spring Boot application 
+    author:fire
+    secret:${random.value}
+    number:${random.int}
+    bignumber:${random.long}
+    uuid:${random.uuid}
+account:
+    enabled: true
+    remote-address: 192.168.1.1
+    security:
+        username: foo
+        roles:
+          - USER
+          - ADMIN
+fire:
+   servers:
+       - dev.bar.com
+       - foo.bar.com
+foo:
+  list:
+    - name: my name
+      description: my description
+    - name: another name
+      description: another description
+---
+spring:
+  profiles: dev
+foo:
+  list:
+     - name: my another name
